@@ -20,7 +20,7 @@ body {
 }
 
 .drop {
-  position: relative;
+  position: absolute;
   background: red;
 }
 
