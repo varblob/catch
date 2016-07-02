@@ -44,8 +44,10 @@
 
   // ================== utils ==================
 
-  // if a sound is currently playing restart from beginning
+  // play an Audio object restarting if sound currently playing
+  // todo overlapping sounds we must create new Audio instances
   var playSound = function (sound) {
+    // if a sound is currently playing restart from beginning
     if (!sound.paused) {
       sound.currentTime = 0;
     } else {
