@@ -104,6 +104,7 @@
     for (var i = 0; i < $drops.length; i++) {
       var $drop = $drops[i];
       var pos = getXY($drop);
+      // the drop hit the bottom :(
       if (pos.y >= GRID_HEIGHT) {
         $missed.push($drop);
       } else if (
