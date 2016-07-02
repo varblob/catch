@@ -175,15 +175,21 @@
 
   // when the user lets go of the key set the pads movement to 0
   var onKeyUp = function (event) {
-    game.padDX = 0;
+    // only reset the speed when keyup for the specific direction
+    // this handles when the player simultaneusly presses left and right
+    // also ignore other keyup events that are not left and right
+    if (event.keyCode === LEFT && game.padDX === -1 ||
+      event.keyCode === RIGHT && game.padDX === 1) {
+      game.padDX = 0;
+    }
   };
 
   // ================== game ==================
   // high level game functions
 
-  // restart the game this end and restarts the game - not currently used
+  // restart the game this end and restarts the game
   var restart = function () {
-    // cleanup if there was a last game
+    // cleanup if there was a last game - there never is currently
     if (game && game.tickHandle) {
       clearInterval(game.tickHandle);
     }
