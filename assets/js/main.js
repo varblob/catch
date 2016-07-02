@@ -42,6 +42,17 @@
   // the sound of catching
   var catchSound = null;
 
+  // ================== utils ==================
+
+  // if a sound is currently playing restart from beginning
+  var playSound = function (sound) {
+    if (!sound.paused) {
+      sound.currentTime = 0;
+    } else {
+      sound.play();
+    }
+  };
+
   // ================== view helpers ==================
   // these are all helpers to get and set model info from a jquery element
   // the conversion to grid is also handled here
@@ -144,12 +155,7 @@
   };
 
   var onDropCatch = function ($drop) {
-    // if a sound is currently playing restart from beginning
-    if (!catchSound.paused) {
-      catchSound.currentTime = 0;
-    } else {
-      catchSound.play();
-    }
+    playSound(catchSound);
     game.score = game.score + 1;
     $score.html(game.score);
     removeDrop($drop);
