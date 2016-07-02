@@ -163,6 +163,7 @@
     removeDrop($drop);
   };
 
+  // NOTE: we must use key down and up as keypress doesn't work for arrow keys
   // set the pads movement direction based on key down
   var onKeyDown = function (event) {
     if (event.keyCode === LEFT) {
