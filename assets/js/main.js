@@ -122,7 +122,7 @@
         $missed.push($drop);
       } else if (
         // colliding with the pad
-        pos.x >= padPos.x && pos.x <= padPos.x + game.padWidth &&
+        pos.x >= padPos.x && pos.x < padPos.x + game.padWidth &&
         // out of bounds
         pos.y === padPos.y) {
         onDropCatch($drop);
