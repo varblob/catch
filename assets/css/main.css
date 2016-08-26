@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.score-wrap{
+  font-size: 200%;
+  margin: 20px;
+}
+
+.game {
+  height: 800px;
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+  border: 20px solid black;
+}
+
+.drop {
+  position: absolute;
+  background: red;
+}
+
+.pad {
+  position: relative;
+  background: black;
+}
